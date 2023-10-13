@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	{% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Образовательный портал</title>
+    <link rel="stylesheet" href="{% static 'css/sako.css' %}">
+
+</head>
+<body>
+	<header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <h1>Образовательный портал</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Курсы</a></li>
+                    <li><a href="#">Видеолекции</a></li>
+                </ul>
+            </nav>
+            <div class="auth-links">
+				{% if user.is_authenticated %}
+				<a href="{% url 'logout' %}" id="loginLink" >Выйти</a>
+				<a href="#">Профиль | {{user}}</a>
+				{% else %}
+                <a href="{% url 'login' %}" id="loginLink">Вход</a>
+                <a href="{% url 'register'%}" id="registerLink">Регистрация</a>
+				{% endif %}
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Поиск курсов...">
+            </div>
+        </div>
+    </header>
+	<section class="banner">
+    <div class="container">
+        <h2></h2>
+        <p></p>
+    </div>
+	</section>
+
+<section class="courses">
+    <div class="container">
+        <h3>Популярные курсы</h3>
+        <div class="course-card">
+			<img src="{% static 'images/Untitled.jpeg' %}" alt="Курс 1">
+			<h4>Название курса</h4>
+			<div class="hidden-info">
+				<p>Подробнее</p>
+			</div>
+		</div>
+		
+    </div>
+	
+	
+</section>
+
+<section class="video-lectures">
+    <div class="container">
+        <h3>Последние видеолекции</h3>
+        <!-- Пример видеолекции -->
+        <div class="video-card">
+            <video controls>
+                <source src="{% static 'videos/lecture1.mp4' %}" type="video/mp4">
+            </video>
+            <h4>Название лекции</h4>
+        </div>
+        <!-- Повторите для других лекций -->
+    </div>
+</section>
+
+<script src="{% static 'js/home.js' %}">
+
+</script>
+</body>
+</html>

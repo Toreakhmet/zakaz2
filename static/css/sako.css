@@ -1,0 +1,190 @@
+:root {
+    --primary-color: #007bff;
+    --border-color: #ccc;
+    --transition-speed: 0.3s;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+li {
+    flex-grow: 1;
+    text-align: center;
+    /* Дополнительные стили для <li> */
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+.logo, nav, .auth-links, .search {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+.header, .banner, .courses, .video-lectures {
+    padding: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo h1, nav ul, .search, .auth-links {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.logo h1 {
+    font-size: 24px;
+}
+
+nav ul li, .auth-links a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #333;
+    transition: color var(--transition-speed);
+}
+a{
+    text-decoration: none;
+    color: #333;
+    transition: color var(--transition-speed);
+}
+nav ul li a:hover, .auth-links a:hover {
+    color: var(--primary-color);
+}
+
+.search input, .course-card, .video-card {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    transition: box-shadow var(--transition-speed);
+}
+
+.course-card:hover, .video-card:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.typewriter h2, .typewriter p {
+    overflow: hidden;
+    border-right: 0.15em solid var(--primary-color);
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em;
+    animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.banner {
+    background: linear-gradient(to right, var(--primary-color), #33ccff);
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.banner .btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background var(--transition-speed);
+}
+
+.banner .btn:hover {
+    background: #0056b3;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--primary-color); }
+}
+
+.auth-links {
+    float: right;
+    margin-left: 20px;
+}
+
+.auth-links a:before {
+    content: '\00a0'; /* Добавляем пробел перед иконкой */
+    font-family: "Font Awesome 5 Free";
+    padding-right: 8px;
+}
+
+
+
+@media (max-width: 768px) {
+    .logo h1, nav ul, .search, .auth-links {
+        display: block;
+        text-align: center;
+    }
+}
+/* Добавим стиль для секции banner */
+.banner {
+    background: linear-gradient(to bottom right, #007bff, #33ccff);
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+/* Стиль для заголовка и текста */
+.banner h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.banner p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    animation: fadeIn 3s ease-in-out;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Стиль для кнопки */
+.banner .btn {
+    padding: 15px 30px;
+    background-color: white;
+    color: #007bff;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.banner .btn:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
