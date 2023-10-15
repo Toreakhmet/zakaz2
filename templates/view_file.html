@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View File</title>
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        /* Стили для основного контента */
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 2.5em;
+            padding: 20px;
+            color: #333;
+        }
+        /* Стили для блока с кодом */
+        pre {
+            background-color: #fff;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            overflow: auto;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+        /* Дополнительные стили для улучшения читаемости */
+        pre:hover {
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>File Viewer <a href="{% url 'home'%}">Home</a></h1>
+    </header>
+
+    <div class="container">
+        <h1>File Content</h1>
+        <pre>{{ content }}</pre>
+    </div>
+</body>
+</html>

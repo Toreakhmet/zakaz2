@@ -1,79 +1,100 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-	{% load static %}
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Образовательный портал</title>
+    <title>Educational Portal</title>
     <link rel="stylesheet" href="{% static 'css/sako.css' %}">
-
 </head>
 <body>
-	<header class="header">
+    <header class="header">
         <div class="container header-container">
             <div class="logo">
-                <h1>Образовательный портал</h1>
+                <h1>Educational Portal</h1>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#">Курсы</a></li>
-                    <li><a href="#">Видеолекции</a></li>
+                    {% if user.user_type == "teacher" %}
+                    <li><a href="{% url 'create_course' %}">My Courses</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Video Lectures</a></li>
+                    {% else %}
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Video Lectures</a></li>
+                    {% endif %}
                 </ul>
             </nav>
             <div class="auth-links">
-				{% if user.is_authenticated %}
-				<a href="{% url 'logout' %}" id="loginLink" >Выйти</a>
-				<a href="#">Профиль | {{user}}</a>
-				{% else %}
-                <a href="{% url 'login' %}" id="loginLink">Вход</a>
-                <a href="{% url 'register'%}" id="registerLink">Регистрация</a>
-				{% endif %}
+                {% if user.is_authenticated %}
+                <a href="{% url 'profile' %}">Profile | {{user}}</a>
+                {% else %}
+                <a href="{% url 'login' %}" id="loginLink">Login</a>
+                <a href="{% url 'register' %}" id="registerLink">Register</a>
+                {% endif %}
             </div>
             <div class="search">
-                <input type="text" placeholder="Поиск курсов...">
+                <input type="text" placeholder="Search courses...">
             </div>
         </div>
     </header>
-	<section class="banner">
+    
+<section class="banner">
     <div class="container">
         <h2></h2>
         <p></p>
     </div>
-	</section>
-
-<section class="courses">
-    <div class="container">
-        <h3>Популярные курсы</h3>
-        <div class="course-card">
-			<img src="{% static 'images/Untitled.jpeg' %}" alt="Курс 1">
-			<h4>Название курса</h4>
-			<div class="hidden-info">
-				<p>Подробнее</p>
-			</div>
-		</div>
-		
-    </div>
-	
-	
 </section>
 
-<section class="video-lectures">
+<!-- Добавленный раздел -->
+<section class="about">
     <div class="container">
-        <h3>Последние видеолекции</h3>
-        <!-- Пример видеолекции -->
-        <div class="video-card">
-            <video controls>
-                <source src="{% static 'videos/lecture1.mp4' %}" type="video/mp4">
-            </video>
-            <h4>Название лекции</h4>
+        <h3>About Us</h3>
+        <p>
+            Welcome to the Educational Portal, your one-stop solution for high-quality and accessible online education. 
+            We offer a range of courses across multiple disciplines, from humanities and social sciences to computer 
+            science and engineering. Our courses are designed by top educators and professionals in the field to 
+            ensure a premium learning experience.
+        </p>
+        <p>
+            Whether you're a student, a professional, or someone who's looking to acquire new skills, our platform 
+            is designed to accommodate your needs. We provide interactive video lectures, comprehensive study 
+            materials, quizzes, and peer-to-peer interaction to provide a complete learning environment.
+        </p>
+    </div>
+</section>
+
+
+    <section class="courses">
+        <div class="container">
+            <h3 class="kotakbas">Popular Courses</h3>
+            {% if course %}
+            {% for cours in course %}
+            <div class="course-card">
+                <a href="{% url 'course_detail' cours.id %}">
+                    <img src="{{ cours.image.url }}" alt="{{cours.title}}" class="small-image">
+                    <h4>{{cours.title}}</h4>
+                    <h6>{{cours.description}}</h6>
+                    <p>authore:{{cours.created_by}}</p>
+                </a>
+            </div>
+            {% endfor %}
+
+            {% else %}
+            <div class="course-card">
+                <img src="{% static 'images/Untitled.jpeg' %}" alt="Course 1" class="small-image">
+                <h4>No available courses yet</h4>
+                <div class="hidden-info">
+                    <p></p> 
+                </div>
+            </div>
+            {% endif %}
         </div>
-        <!-- Повторите для других лекций -->
-    </div>
-</section>
+    </section>
 
-<script src="{% static 'js/home.js' %}">
+    
 
-</script>
+    <script src="{% static 'js/home.js' %}">
+    </script>
 </body>
 </html>

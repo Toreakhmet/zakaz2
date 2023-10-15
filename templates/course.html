@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создать курс</title>
+    <link rel="stylesheet" href="{% static 'course.css'%}">
+    
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Создать курс</h1>
+        <form action="{% url 'create_course' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="title">Название курса</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Описание курса</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="image">Изображение курса</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lectures">Лекции (Можно выбрать несколько файлов)</label>
+                <input type="file" id="lectures" name="lectures" multiple required>
+            </div>
+
+            <div class="form-group">
+                <label for="practices">Практические задания (Можно выбрать несколько файлов)</label>
+                <input type="file" id="practices" name="practices" multiple required>
+            </div>
+
+            <button type="submit">Создать курс</button>
+        </form>
+    </div>
+
+</body>
+</html>

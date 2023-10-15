@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <style>
+        /* Основной стиль для темного режима */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #444;
+            border-radius: 8px;
+            background-color: #333;
+            box-shadow: 0 0 10px rgba(0,0,0,0.8);
+        }
+
+        /* Стиль для ссылок */
+        a {
+            color: #007bff;
+            text-decoration: none;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
+
+        /* Стиль для параграфов */
+        p {
+            margin: 15px 0;
+        }
+
+        /* Стиль для выхода и сброса пароля */
+        #loginLink, #passwordLink {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Ваше имя: {{user.username}}</p>
+        <p>Ваше статус: {{user.user_type}}</p>
+        <p>Дата регистрации: {{user.date_joined}}</p>
+        <a href="{% url 'logout' %}" id="loginLink">Выйти</a>
+        <a href="{% url 'password_change' %}" id="passwordLink">Сброс пароля</a>
+    </div>
+</body>
+</html>

@@ -23,8 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-k^nj8qa_@x)l08c-2ar4pl4cw058o&v%j6fxdwepwkwni&g*y!'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
-
-
+PASSWORD_CHANGE_REDIRECT_URL=''
+LOGIN_URL = '/login/'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -49,11 +49,15 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
 ROOT_URLCONF = 'education_portal.urls'
 
 TEMPLATES = [
@@ -72,6 +76,14 @@ TEMPLATES = [
     },
 ]
 
+# settings.py
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'toreahmetsalamat487@gmail.com'
+EMAIL_HOST_PASSWORD = 'oiureqqwflswvdnk'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

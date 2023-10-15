@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Стили для контейнера */
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+        }
+        /* Стили для заголовков и описания */
+        h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        /* Стили для блока с кодом */
+        pre {
+            background-color: #eee;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            overflow: auto;
+        }
+        /* Дополнительный стиль для улучшения читаемости при наведении */
+        pre:hover {
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- course_detail.html -->
+        {% load static %}
+
+        <h2>{{ course.title }}</h2>
+        <p>{{ course.description }}</p>
+        <pre>{{ content }}</pre>
+    </div>
+</body>
+</html>

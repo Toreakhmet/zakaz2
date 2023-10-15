@@ -1,0 +1,69 @@
+Keywords: Lectins, Microbes, Antimicrobial action, Immune responses
+Go to:
+Abbreviations
+
+Concanavalin A
+    Con A
+Wheat germ aggulutinin
+    WGA
+Pisum sativum lectin
+    PSL
+Soybean lectin
+    SBL
+Urtica dioica agglutinin
+    UDA
+Galanthus nivalis agglutinin
+    GNA
+Ulex eueropaeus agglutinin
+    UEA
+Bauhinia monandra leaf lectin
+    BmoLL
+Lens culinais lectin
+    LCL
+Phytoagglutinin
+    PHA
+Datura stramonium agglutinin
+    DSA
+Vicia violsa agglutinin
+    VVA
+G. simplicifolia lectin-1
+    GSL-1
+Jack fruit lectin
+    JFL
+Peanut agglutinin
+    PNA
+Banana lectin
+    Ban Lec
+Carbohydrate recognition domain
+    CRD
+N-acetyl galactosamine
+    Gal NAc
+N-acetyl glucosamine
+    Glc NAc
+Ribosome inactivating proteins
+    RIP
+Pathogen associated molecular pattern
+    PAMP
+Pattern recognition receptors
+    PRR
+Enzyme linked lectin assay
+    ELLA
+Electrochemical impedence spectroscopy
+    EIS
+Maccakia amurensis leukoagglutinin
+    MAL
+Severe combined immune deficiency disease
+    SCID
+Gastrointestinal tract
+    GIT
+Cholecystokinin
+    CCK
+Lymphocyte function associated antigen 1
+    LFA-1
+Dioclea violacea lectin
+    Dvl
+
+Go to:
+1. Introduction
+
+Lectins are natural bioactive proteins and glycoproteins having the capability to bind sugars specifically (Kennedy et al., 1995; Goldstein and Hayes, 1978; Lis and Sharon, 1977; Gallagher, 1984; Brown and Hunt, 1978). These sugar-binding proteins are of non-immune origin that can agglutinate cells or precipitate glyco-conjugates (Goldstein, 1980; Nilsson, 2007). They are ubiquitous in nature and known to play pivotal role in many life processes (Kennedy et al., 1995). Hitherto, numerous lectins have been isolated from various sources such as plants, algae, fungi, body fluid of invertebrates and lower vertebrates. Lectins can be used as models to study protein-carbohydrate interactions and as subtle tool for analysing free form or lipid-bound or protein-bound carbohydrate. Owing to its carbohydrate binding specificity, lectins are further used to deliver drugs at the site of action. Many reports have shown the peculiar characteristics of plant and animal lectins as recognition molecule in cell-molecule and cell-cell interactions in various biological systems (Sharon and Lis, 2004). In addition, they also play significant role in elucidating biological processes, clinical diagnostic system and carbohydrate structure (Sharon and Lis

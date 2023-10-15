@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Create Course</title>
+    <link rel="stylesheet" href="{% static 'css/create.css'%}">
+    
+</head>
+<body>
+    <header>
+        <h1>Create a new Course</h1>
+    </header>
+    <section id="description">
+        <p>Welcome to the course creation page! Fill in the details to create a new course.</p>
+    </section>
+    <main>
+        <form method="post" enctype="multipart/form-data" id="courseForm">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div id="extraFieldsContainer"></div>
+            <button type="submit">Создать</button>
+        </form>
+        
+    </main>
+    <footer>
+        <p>Thank you for using our platform!</p>
+    </footer>
+    <script src="{% static 'js/create.js'%}"></script>
+</body>
+</html>
