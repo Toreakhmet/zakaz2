@@ -133,10 +133,9 @@ AUTH_USER_MODEL = 'courses.CustomUser'  # замените 'my_app' на имя 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_ROOT = '/home/pokerman228/pokerman228.pythonanywhere.com/static/'
-STATICFILES_DIRS = [
-    '/home/pokerman228/pokerman228.pythonanywhere.com/static_files/',
-]
+STATIC_URL = 'static/'
+STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
